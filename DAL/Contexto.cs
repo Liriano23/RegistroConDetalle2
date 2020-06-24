@@ -16,7 +16,7 @@ namespace RegistroConDetalle2.DAL
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server = DESKTOP-ENMANUE; Database = PruebaDB; Trusted_Connection = True;");
+            optionsBuilder.UseSqlite(@"Data source = Data/RegistroConDetalle2.db");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

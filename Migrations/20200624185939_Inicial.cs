@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace RegistroConDetalle2.Migrations
 {
-    public partial class Priemra : Migration
+    public partial class Inicial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,7 +12,7 @@ namespace RegistroConDetalle2.Migrations
                 columns: table => new
                 {
                     OrdenId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("Sqlite:Autoincrement", true),
                     Fecha = table.Column<DateTime>(nullable: false),
                     SuplidorId = table.Column<int>(nullable: false),
                     Monto = table.Column<decimal>(nullable: false)
@@ -27,7 +27,7 @@ namespace RegistroConDetalle2.Migrations
                 columns: table => new
                 {
                     SuplidorId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("Sqlite:Autoincrement", true),
                     Nombre = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
@@ -40,7 +40,7 @@ namespace RegistroConDetalle2.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("Sqlite:Autoincrement", true),
                     OrdenId = table.Column<int>(nullable: false),
                     Cantidad = table.Column<int>(nullable: false),
                     ProductoId = table.Column<int>(nullable: false),
@@ -62,7 +62,7 @@ namespace RegistroConDetalle2.Migrations
                 columns: table => new
                 {
                     ProductosId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("Sqlite:Autoincrement", true),
                     Descripcion = table.Column<string>(nullable: false),
                     Costo = table.Column<decimal>(nullable: false),
                     Inventario = table.Column<int>(nullable: false),
